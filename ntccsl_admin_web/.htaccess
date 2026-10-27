@@ -1,0 +1,4 @@
+Options -Indexes
+DirectoryIndex index.html
+RewriteEngine On
+RewriteRule ^api$ api.php [L]

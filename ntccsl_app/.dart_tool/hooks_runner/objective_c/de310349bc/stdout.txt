@@ -1,0 +1,49 @@
+Running `(cd /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/; TMPDIR=/var/folders/s9/5l1zsd6s4z36rvg3n5g2qjlc0000gp/T/ PATH=/Users/mac/develop/flutter/bin:/Users/mac/.config/herd-lite/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pkg/env/active/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Visual Studio Code.app/Contents/Resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/darwin-arm64:/Applications/Visual Studio Code.app/Contents/Resources/app/node_modules.asar.unpacked/@github/copilot-sdk-darwin-arm64/ripgrep/bin/darwin-arm64 HOME=/Users/mac /Users/mac/develop/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/package_config.json /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/objective_c/de310349bc/hook.dill --config=/Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/objective_c/de310349bc/input.json )`.
+INFO: 2026-10-28 00:27:44.874090: Using compiler /Library/Developer/CommandLineTools/usr/bin/clang from BuildInput.cCompiler.cc.
+
+INFO: 2026-10-28 00:27:44.877808: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/include/dart_api_dl.c -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-10-28 00:27:44.878830: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.c -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c.c.o
+
+INFO: 2026-10-28 00:27:44.878997: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/input_stream_adapter.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-10-28 00:27:44.879107: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c.m.o
+
+INFO: 2026-10-28 00:27:44.879209: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/observer.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/observer.m.o
+
+INFO: 2026-10-28 00:27:44.879309: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/ns_number.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/ns_number.m.o
+
+INFO: 2026-10-28 00:27:44.879406: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/protocol.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/protocol.m.o
+
+INFO: 2026-10-28 00:27:44.879506: Running: /Library/Developer/CommandLineTools/usr/bin/clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c_bindings_generated.m -fpic -gline-tables-only -I src -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-10-28 00:27:45.256089: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/include/dart_api_dl.c.o
+
+/shared/objective_c/build/de310349bc/obj/src/objective_c.c.o
+INFO: 2026-10-28 00:27:45.256064: 
+INFO: 2026-10-28 00:27:45.256079: 
+
+INFO: 2026-10-28 00:27:45.256937: 
+INFO: 2026-10-28 00:27:45.256959: 
+INFO: 2026-10-28 00:27:45.256969: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/protocol.m.o
+
+INFO: 2026-10-28 00:27:45.547776: 
+INFO: 2026-10-28 00:27:45.547814: 
+INFO: 2026-10-28 00:27:45.547825: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/ns_number.m.o
+
+INFO: 2026-10-28 00:27:45.562428: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/input_stream_adapter.m.o
+
+shared/objective_c/build/de310349bc/obj/src/objective_c.m.o
+INFO: 2026-10-28 00:27:45.562409: 
+INFO: 2026-10-28 00:27:45.562421: 
+
+INFO: 2026-10-28 00:27:45.598504: 
+INFO: 2026-10-28 00:27:45.598539: 
+INFO: 2026-10-28 00:27:45.598549: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-10-28 00:27:45.598875: Running: /Library/Developer/CommandLineTools/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -target arm64-apple-darwin -mmacos-version-min=13 /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/include/dart_api_dl.c.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c.c.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/input_stream_adapter.m.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c.m.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/observer.m.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/ns_number.m.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/protocol.m.o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/obj/src/objective_c_bindings_generated.m.o -o /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/objective_c.dylib
+
+INFO: 2026-10-28 00:27:45.850541: 
+INFO: 2026-10-28 00:27:45.850620: 
+INFO: 2026-10-28 00:27:45.850635: Generated /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/hooks_runner/shared/objective_c/build/de310349bc/objective_c.dylib
+

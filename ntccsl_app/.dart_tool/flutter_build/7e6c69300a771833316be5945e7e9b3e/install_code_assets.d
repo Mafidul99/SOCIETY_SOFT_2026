@@ -1,0 +1,1 @@
+ /Users/mac/Projects/Socitysoft/ntccsl_app/.dart_tool/flutter_build/7e6c69300a771833316be5945e7e9b3e/native_assets.json: 

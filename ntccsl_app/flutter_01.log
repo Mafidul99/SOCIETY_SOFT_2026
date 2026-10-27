@@ -1,0 +1,98 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --quiet assemble --no-version-check --depfile /Users/mac/Projects/school/ntccsl_app/build/app/intermediates/flutter/debug/flutter_build.d --output /Users/mac/Projects/school/ntccsl_app/build/app/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true -dFlavor= -dAndroidArchs=android-arm android-arm64 android-x64 -dMinSdkVersion=24 debug_android_application
+
+## exception
+
+StateError: Bad state: Could not determine run package name. Project path "/Users/mac/Projects/school/ntccsl_app/" did not occur as package root in package config "/Users/mac/Projects/school/.dart_tool/package_config.json". Please report a reproduction on https://github.com/flutter/flutter/issues/169475.
+
+```
+#0      DartBuild.build (package:flutter_tools/src/build_system/targets/native_assets.dart:50:7)
+<asynchronous suspension>
+#1      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:937:9)
+<asynchronous suspension>
+#2      Future.wait.<anonymous closure> (dart:async/future.dart:546:21)
+<asynchronous suspension>
+#3      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:875:32)
+<asynchronous suspension>
+#4      Future.wait.<anonymous closure> (dart:async/future.dart:546:21)
+<asynchronous suspension>
+#5      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:875:32)
+<asynchronous suspension>
+#6      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:684:16)
+<asynchronous suspension>
+#7      AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:365:32)
+<asynchronous suspension>
+#8      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:27)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#10     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#14     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.41.3, on macOS 26.4 25E5218f darwin-arm64, locale en-IN) [106ms]
+    • Flutter version 3.41.3 on channel stable at /Users/mac/develop/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 48c32af034 (8 months ago), 2026-02-27 17:09:06 -0500
+    • Engine revision 327ed81450
+    • Dart version 3.11.1
+    • DevTools version 2.54.1
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [2.7s]
+    • Android SDK at /Users/mac/Library/Android/sdk
+    • Emulator version 36.4.9.0 (build_id 14788078) (CL:N/A)
+    • Platform android-36.1, build-tools 36.1.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+      This is the JDK bundled with the latest Android Studio installation on this machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment (build 21.0.9+-14649483-b1163.86)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[✗] Xcode - develop for iOS and macOS [92ms]
+    ✗ Xcode installation is incomplete; a full installation is necessary for iOS and macOS development.
+      Download at: https://developer.apple.com/xcode/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+    ✗ CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation
+
+[✓] Chrome - develop for the web [37ms]
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Connected device (3 available) [1,370ms]
+    • sdk gphone64 arm64 (mobile) • emulator-5554 • android-arm64  • Android 16 (API 36) (emulator)
+    • macOS (desktop)             • macos         • darwin-arm64   • macOS 26.4 25E5218f darwin-arm64
+    • Chrome (web)                • chrome        • web-javascript • Google Chrome 156.0.8078.47
+
+[✓] Network resources [689ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```

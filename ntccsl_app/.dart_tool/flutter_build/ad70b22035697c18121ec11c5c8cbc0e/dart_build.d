@@ -1,0 +1,1 @@
+ /Users/mac/Projects/school/ntccsl_app/.dart_tool/flutter_build/ad70b22035697c18121ec11c5c8cbc0e/dart_build_result.json:  /Users/mac/Projects/school/ntccsl_app/.dart_tool/package_config.json /Users/mac/Projects/school/ntccsl_app/pubspec.yaml /Users/mac/develop/flutter/bin/cache/dart-sdk/version
