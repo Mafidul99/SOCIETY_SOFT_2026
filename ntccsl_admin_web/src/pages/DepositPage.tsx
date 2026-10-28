@@ -500,7 +500,7 @@ export function DepositPage({
                               />
                               <path d="M8 3v4m8-4v4M4 10h16M8 14h3m-3 3h7" />
                             </svg>
-                            View installment schedule
+                            View installment
                           </span>
                         </button>
                         <span className="schedule-toggle-count">

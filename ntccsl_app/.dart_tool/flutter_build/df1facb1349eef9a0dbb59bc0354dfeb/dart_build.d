@@ -1,0 +1,1 @@
+ /Users/mac/Projects/SOCIETY_SOFT_2026/ntccsl_app/.dart_tool/flutter_build/df1facb1349eef9a0dbb59bc0354dfeb/dart_build_result.json:  /Users/mac/Projects/SOCIETY_SOFT_2026/ntccsl_app/.dart_tool/package_config.json /Users/mac/Projects/SOCIETY_SOFT_2026/ntccsl_app/pubspec.yaml /Users/mac/develop/flutter/bin/cache/dart-sdk/version
