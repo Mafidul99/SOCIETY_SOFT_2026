@@ -73,6 +73,7 @@ export function RecordForm({
   fields,
   initial = {},
   busy,
+  extraContent,
   openingBalance,
   onClose,
   onSubmit,
@@ -81,6 +82,7 @@ export function RecordForm({
   fields: Field[];
   initial?: Record<string, unknown>;
   busy?: boolean;
+  extraContent?: ReactNode;
   openingBalance?: number;
   onClose: () => void;
   onSubmit: (values: Record<string, string | boolean>) => Promise<void>;
@@ -163,6 +165,7 @@ export function RecordForm({
             </label>
           ))}
         </div>
+        {extraContent}
         {error && <p className="form-error" role="alert">{error}</p>}
         <footer className="modal-actions">
           <button type="button" className="button button-quiet" onClick={onClose}>Cancel</button>

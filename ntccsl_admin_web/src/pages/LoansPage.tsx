@@ -140,6 +140,8 @@ export function SchemeForm({
   </Modal>;
 }
 
+type LoanApprovalStatus = 'Approved' | 'Rejected';
+
 export function LoanPage({
   session,
   page,
@@ -168,6 +170,8 @@ export function LoanPage({
   const [loadingSchedules, setLoadingSchedules] = useState<Set<string>>(() => new Set());
   const [scheduleErrors, setScheduleErrors] = useState<Record<string, string>>({});
   const [pendingLoanActions, setPendingLoanActions] = useState<Set<string>>(() => new Set());
+  const [selectedReviewLoanId, setSelectedReviewLoanId] = useState('');
+  const [reviewApprovalStatus, setReviewApprovalStatus] = useState<LoanApprovalStatus | ''>('');
   const [expandedId, setExpandedId] = useState('');
   const [paymentPhone, setPaymentPhone] = useState(session.user.phoneNumber);
   const [paymentBusy, setPaymentBusy] = useState(false);
@@ -226,11 +230,13 @@ export function LoanPage({
       });
     }
   };
-  const reviewLoan = async (row: RecordRow, approvalStatus: 'Approved' | 'Rejected') => {
+  const reviewLoan = async (row: RecordRow, approvalStatus: LoanApprovalStatus) => {
     const actionKey = `review:${text(row.id)}`;
     setPendingLoanActions((current) => new Set(current).add(actionKey));
     try {
       await mutate('approveLoan', session, { id: row.id, approvalStatus });
+      setSelectedReviewLoanId('');
+      setReviewApprovalStatus('');
       onNotice(`Loan ${approvalStatus.toLowerCase()}.`);
       await load();
     } catch (cause) { onNotice(cause instanceof Error ? cause.message : 'Could not update approval status.'); }
@@ -453,6 +459,8 @@ export function LoanPage({
   };
 
   const filteredLoans = loans.filter((loan) => !approvedOnly || normalize(loan.approvalStatus || 'Approved') === 'approved');
+  const pendingReviewLoans = filteredLoans.filter((loan) => normalize(loan.approvalStatus) === 'pending');
+  const selectedReviewLoan = pendingReviewLoans.find((loan) => text(loan.id) === selectedReviewLoanId);
   const title = master ? 'Loan master' : approvedOnly ? 'Approved loans' : `${loanType === 'gold' ? 'Gold' : 'Personal'} loans`;
   const subtitle = master ? 'Review applications and maintain loan products and terms.' : approvedOnly ? 'Approved accounts and repayment progress.' : 'Review loans, repayment schedules, and applications.';
   const loanColumns = [
@@ -463,7 +471,6 @@ export function LoanPage({
     { key: 'monthlyInstallment', label: 'Installment', render: (row: RecordRow) => money(row.monthlyInstallment) },
     { key: 'approvalStatus', label: 'Status', render: (row: RecordRow) => <span className={`status status-${normalize(row.approvalStatus || 'approved')}`}>{text(row.approvalStatus || 'Approved')}</span> },
     { key: 'actions', label: 'Actions', render: (row: RecordRow) => <div className="row-actions">
-      {normalize(row.approvalStatus) === 'pending' && canReview && <><button className="text-button" disabled={pendingLoanActions.has(`review:${text(row.id)}`)} onClick={() => void reviewLoan(row, 'Approved')}>{pendingLoanActions.has(`review:${text(row.id)}`) && <PortalLoader label="Updating loan" inline size={15} />}Approve</button><button className="text-button danger-text" disabled={pendingLoanActions.has(`review:${text(row.id)}`)} onClick={() => void reviewLoan(row, 'Rejected')}>Reject</button></>}
       <RowActions
         edit={canEdit ? () => setFormRow(row) : undefined}
         remove={canDelete ? () => void removeLoan(row) : undefined}
@@ -489,6 +496,46 @@ export function LoanPage({
     <section className="panel loan-panel">
       <div className="panel-heading"><h2>{master ? 'Application queue' : `${title} records`}</h2><span className="badge">{filteredLoans.length} records</span></div>
       <StatePanel loading={loading} error={error} retry={() => void load()}>
+        {canReview && pendingReviewLoans.length > 0 && <section className="loan-review-panel" aria-labelledby="loan-review-heading">
+          <div className="loan-review-heading">
+            <h3 id="loan-review-heading">Review application</h3>
+            <p className="muted">Choose a pending application and update its approval status.</p>
+          </div>
+          <div className="loan-review-form">
+            <label className="field loan-review-field">
+              <span>Pending application</span>
+              <select value={selectedReviewLoanId} onChange={(event) => setSelectedReviewLoanId(event.target.value)}>
+                <option value="">Choose an application…</option>
+                {pendingReviewLoans.map((loan) => <option key={text(loan.id)} value={text(loan.id)}>
+                  {[text(loan.loanNumber), text(loan.memberName), money(loan.principal)].filter(Boolean).join(' · ')}
+                </option>)}
+              </select>
+            </label>
+            <label className="field loan-review-field">
+              <span>Decision</span>
+              <select
+                value={reviewApprovalStatus}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setReviewApprovalStatus(value === 'Approved' || value === 'Rejected' ? value : '');
+                }}
+              >
+                <option value="">Choose a decision…</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+            <button
+              type="button"
+              className="button button-primary loan-review-button"
+              disabled={!selectedReviewLoan || !reviewApprovalStatus || pendingLoanActions.has(`review:${selectedReviewLoanId}`)}
+              onClick={() => selectedReviewLoan && reviewApprovalStatus && void reviewLoan(selectedReviewLoan, reviewApprovalStatus)}
+            >
+              {selectedReviewLoan && pendingLoanActions.has(`review:${selectedReviewLoanId}`) && <PortalLoader label="Updating loan" inline size={15} />}
+              Update status
+            </button>
+          </div>
+        </section>}
         <Table rows={filteredLoans} columns={loanColumns} empty={canAdd ? 'Submit a loan application to get started.' : 'There are no loan records to show.'} />
       </StatePanel>
     </section>

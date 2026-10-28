@@ -247,6 +247,12 @@ h1, h2, h3, strong { font-family: Manrope, 'DM Sans', sans-serif; }
 .button-secondary:hover, .button-quiet:hover { border-color: var(--primary); color: var(--primary); }
 .button-quiet { border-color: transparent; color: var(--muted); background: transparent; }
 .button-full { width: 100%; min-height: 45px; }
+.loan-review-panel { display: grid; gap: 13px; margin-bottom: 16px; padding: 15px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface-muted); }
+.loan-review-heading h3 { margin: 0 0 4px; font-size: 13px; }
+.loan-review-heading p { margin: 0; font-size: 11px; }
+.loan-review-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.loan-review-field { flex: 1 1 220px; max-width: 360px; }
+.loan-review-button { min-height: 40px; }
 .field { display: flex; min-width: 0; flex-direction: column; gap: 7px; color: var(--text); font-size: 11px; font-weight: 700; }
 .field input, .field select { width: 100%; min-height: 40px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; outline: none; color: var(--text); background: var(--surface); font-size: 12px; }
 .field input:focus, .field select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent); }
@@ -255,6 +261,15 @@ h1, h2, h3, strong { font-family: Manrope, 'DM Sans', sans-serif; }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 .form-error { margin: 12px 0 0; color: var(--red); font-size: 12px; }
 .form-hint { margin: 15px 0 0; color: var(--muted); font-size: 11px; }
+.user-image-editor { display: flex; align-items: center; gap: 14px; margin-top: 16px; padding: 14px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface-muted); }
+.user-image-preview { display: grid; width: 58px; height: 58px; flex: 0 0 58px; overflow: hidden; place-items: center; border-radius: 50%; color: #fff; background: var(--brand-mid); font: 800 21px Manrope, sans-serif; }
+.user-image-preview img { width: 100%; height: 100%; object-fit: cover; }
+.user-image-copy { display: grid; min-width: 0; gap: 5px; }
+.user-image-copy > strong { font-size: 12px; }
+.user-image-copy > span { color: var(--muted); font-size: 10px; }
+.user-image-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.user-image-actions .button { min-height: 31px; padding: 6px 9px; font-size: 10px; }
+.user-image-error { color: var(--red) !important; }
 .modal-backdrop { position: fixed; z-index: 40; inset: 0; display: grid; overflow: auto; padding: 24px; place-items: center; background: rgba(8, 20, 39, .54); backdrop-filter: blur(3px); }
 .modal { width: min(100%, 620px); max-height: min(90vh, 850px); overflow-y: auto; padding: 22px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); box-shadow: 0 24px 75px rgba(0,0,0,.23); }
 .payment-success-backdrop { position: fixed; z-index: 80; inset: 0; display: grid; padding: 20px; place-items: center; background: rgba(8, 20, 39, .62); backdrop-filter: blur(5px); }
